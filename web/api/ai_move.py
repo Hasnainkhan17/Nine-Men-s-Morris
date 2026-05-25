@@ -3,7 +3,7 @@ from game_logic import GameState, MinimaxAI
 
 app = Flask(__name__)
 
-@app.route('/api/ai-move', methods=['POST'])
+@app.route('/api/ai_move', methods=['POST'])
 def get_ai_move():
     data = request.json
     state_dict = data.get('state')

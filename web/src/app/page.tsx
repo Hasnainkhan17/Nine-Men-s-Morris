@@ -21,7 +21,7 @@ export default function Home() {
       const fetchAiMove = async () => {
         setIsAiThinking(true);
         try {
-          const res = await fetch('/api/ai-move', {
+          const res = await fetch('/api/ai_move', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ state, difficulty: aiDifficulty })
