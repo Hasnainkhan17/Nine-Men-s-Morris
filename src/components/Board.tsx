@@ -53,7 +53,7 @@ export default function Board({ state, selectedNode, onNodeClick }: BoardProps) 
           let radius = 2;
 
           if (piece === PLAYER1) {
-            fill = "#111"; stroke = "#555"; radius = 3.5;
+            fill = "#3b82f6"; stroke = "#60a5fa"; radius = 3.5;
           } else if (piece === PLAYER2) {
             fill = "#f5f5f5"; stroke = "#ccc"; radius = 3.5;
           }

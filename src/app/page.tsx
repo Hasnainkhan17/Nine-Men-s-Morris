@@ -69,7 +69,7 @@ export default function Home() {
   // UI Helpers
   const getMessage = () => {
     if (state.game_over) return `Game Over! Player ${state.winner} Wins!`;
-    const player = state.turn === PLAYER1 ? "Player 1 (Black)" : "Player 2 (White)";
+    const player = state.turn === PLAYER1 ? "Player 1 (Blue)" : "Player 2 (White)";
     if (state.remove_mode) return `${player} formed a Mill! Remove opponent piece.`;
     if (state.phase === PHASE_PLACING) return `${player} Placing (P1: ${state.unplaced_pieces["1"]} | P2: ${state.unplaced_pieces["2"]})`;
     return `${player} Moving`;
