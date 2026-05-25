@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from game_logic import GameState, MinimaxAI
+from api.game_logic import GameState, MinimaxAI
 
 app = Flask(__name__)
 
