@@ -1,56 +1,36 @@
-# AI-Based Nine Men's Morris Game
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A fully functional, desktop-based Nine Men's Morris game built with Python and Pygame. This project was developed as a semester project for an AI course. It features both Human vs. Human and Human vs. AI modes, with the AI powered by the Minimax algorithm and Alpha-Beta pruning.
+## Getting Started
 
-## Features
-- **Responsive UI:** Minimalist and modern Pygame interface that supports window resizing.
-- **Complete Ruleset:** Implements all phases of Nine Men's Morris (Placing, Moving, and Flying).
-- **Mill Mechanics:** Robust logic to detect "mills" (three pieces in a row) and enforce valid piece removals.
-- **AI Opponent:** Play against an AI agent utilizing Minimax with Alpha-Beta pruning.
-- **Difficulty Levels:** Choose between Easy, Medium, and Hard AI difficulties.
-- **Visual Feedback:** Highlights selected pieces, valid move destinations, and removable opponent pieces.
+First, run the development server:
 
-## Prerequisites
-- Python 3.x
-- Pygame (`pip install pygame`)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Installation and Execution
-1. Clone or download the repository.
-2. Ensure you have `pygame` installed. You can install it via terminal:
-   ```bash
-   pip install pygame
-   ```
-3. Run the main file to start the game:
-   ```bash
-   python main.py
-   ```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Rules of Nine Men's Morris
-The game is played on a board consisting of 24 intersections (nodes). Each player has 9 pieces.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-1. **Phase 1: Placing** 
-   Players take turns placing their pieces onto empty nodes. If a player places three of their pieces in a contiguous straight line (a "Mill"), they must remove one of the opponent's pieces. An opponent's piece that is part of a mill cannot be removed unless no other pieces are available.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-2. **Phase 2: Moving**
-   Once all 9 pieces are placed, players take turns moving one of their pieces to an adjacent empty node. Forming a mill again allows the removal of an opponent's piece.
+## Learn More
 
-3. **Phase 3: Flying**
-   When a player is reduced to exactly 3 pieces, their pieces gain the ability to "fly" to *any* empty node on the board, not just adjacent ones.
+To learn more about Next.js, take a look at the following resources:
 
-**Winning:**
-A player wins if their opponent is reduced to 2 pieces (making it impossible to form a mill) OR if their opponent has no valid moves left.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## AI Implementation
-The AI uses the **Minimax Algorithm** with **Alpha-Beta Pruning** to drastically reduce the number of nodes evaluated in the search tree. 
-- The **Easy** difficulty searches to a shallow depth (2).
-- The **Medium** difficulty searches to a standard depth (3).
-- The **Hard** difficulty searches deeper (4), planning multiple steps ahead.
-- The **Heuristic Evaluation Function** scores board states based primarily on the piece difference between the AI and the Human player. More pieces equal a higher score.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Code Structure
-- `constants.py`: Stores colors, window size, and player constants.
-- `board.py`: Contains the `Board` class managing the graph adjacency list and mill logic.
-- `game.py`: Contains the `GameState` class handling turns, phases, and win logic.
-- `ai.py`: Implements the `MinimaxAI` class and its evaluation functions.
-- `ui.py`: Manages all Pygame rendering and user interactions.
-- `main.py`: The entry point for the game.
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
